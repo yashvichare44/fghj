@@ -1,0 +1,47 @@
+<html>
+    <head>
+         <title>Dee </title>
+
+               <style>
+			*{font-size:70px;}
+			body{background-color:azure;}
+		</style>
+	<body>
+		<center>
+			<h1>Greeting App</h1>
+
+			<form onsubmit="show()">
+			<input type ="text" placeholder="enter your name" id="name"/>
+			<br/><br/>
+			<input type="submit"/>
+			<h2 id="msg"/>
+			</form>
+			<script>
+				function show()
+				{
+					event.preventDefault();
+					let name =document.getElementById("name");
+					let msg =document.getElementById("msg");
+					let d =new Date();
+					let hr=d.getHours();
+					let n=name.value;
+
+					if(n==="")
+					{
+						alert("please enter name");
+						name.focus();
+						msg.innerHTML="";
+						return;
+					}
+					if(hr<12)
+						msg.innerHTML="Good Morning"+n;
+					else if (hr<16)
+						msg.innerHTML="Good Afternoon"+n;
+					else
+						msg.innerHTML="Good Evening"+ n;
+}
+ 			</script>
+		</center>
+	</body>
+    </head>
+</html>
